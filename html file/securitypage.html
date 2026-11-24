@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="securitypage.css">
+    <link rel="stylesheet" href="fixed.css">
+</head>
+<body>
+<div class="container">
+
+
+    <aside class="sidebar">
+
+        <div class="profile">
+            <div class="avatar" id="avatar">DU</div>
+
+            <div class="profile-info">
+                <h4 id="profileName">Demo User</h4>
+                <p id="profileEmail">demo@webtech.practice</p>
+            </div>
+        </div>
+
+        <div class="menu-title"><p>DASHBOARD</p></div>
+
+       <ul class="menu">
+            <li><a href="overviewpage.html" id="overview">Overview</a></li>
+            <li><a href="profilepage.html" id="profile">Profile Settings</a></li>
+            <li class="active"><a href="securitypage.html" id="security">Security</a></li>
+            <li><a href="notificationpage.html" id="notification">Notification</a></li>
+        </ul>
+
+        <div class="menu-title">QUICK ACTION</div>
+
+        <ul class="menu">
+            <li><a href="helppage.html" id="help">Help & Support</a></li>
+        </ul>
+
+        <div class="bottom-menu">
+
+            <div class="menu-title">ACCOUNT</div>
+
+            <ul class="menu">
+                <li><a href="#" id="logout">Sign out</a></li>
+            </ul>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <h3>WebTech Practice Dashboard</h3>
+
+        </header>
+
+        <section class="card">
+            <h3>Security Settings</h3>
+            <h4>Security Settings</h4>
+            <h5>Keep your account secure by using strong password and changing it regularly.</h5>
+            <form id="passwordForm">
+                <div class="grid">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="text" placeholder="Enter Current password" id="currentPassword">
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="text" placeholder="Minimum 6 characters" id="newPassword">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="text" placeholder="Re-enter new password" id="confirmPassword">
+                </div>
+                <div class="buttons">
+
+                    <button class="cancel" type="button">
+                        Clear
+                    </button>
+
+                    <button class="save" type="submit">
+                        Update Password
+                    </button>
+                    
+
+
+                </div>
+                <p id="updateMessage"></p>
+                </div>  
+            </form>
+            <hr>
+            <h3>Security Information</h3>
+
+            <div class="actions">
+                <div class="info-card">
+                    <span>&#128198</span>
+                    <h4>Account created</h4>
+                    <p>8/31/2025</p>
+                </div>
+                <div class="info-card">
+                    <span>&#128198</span>
+                    <h4>Last Updated</h4>
+                    <p>Never updated</p>
+                </div>
+                <div class="info-card">
+                    <span>&#128198</span>
+                    <h4>Session</h4>
+                    <p>Current browser session active.</p>
+                </div>
+                
+
+            </div>
+            
+        
+        </section>
+    </main>
+</div>
+<script>
+document.getElementById("passwordForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const message = document.getElementById("updateMessage");
+
+    // Clear old message
+    message.textContent = "";
+
+    const currentPassword = document.getElementById("currentPassword").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+
+    // Get logged in user
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+
+    if (!currentUser) {
+        message.style.color = "red";
+        message.textContent = "No user found.";
+        return;
+    }
+
+
+    // Check current password
+    if (currentPassword !== currentUser.password) {
+        message.style.color = "red";
+        message.textContent = "Current password is incorrect.";
+        return;
+    }
+
+
+    // Check password length
+    if (newPassword.length < 8) {
+        message.style.color = "red";
+        message.textContent = "Password must be at least 8 characters.";
+        return;
+    }
+
+
+    // Confirm password
+    if (newPassword !== confirmPassword) {
+        message.style.color = "red";
+        message.textContent = "Passwords do not match.";
+        return;
+    }
+
+
+    // Update current user
+    currentUser.password = newPassword;
+
+    localStorage.setItem(
+        "currentUser",
+        JSON.stringify(currentUser)
+    );
+
+
+    // Update users array
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    users = users.map(function(user) {
+
+        if (user.email === currentUser.email) {
+            user.password = newPassword;
+        }
+
+        return user;
+    });
+
+
+    localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+    );
+
+
+    // Success message
+    message.style.color = "green";
+    message.textContent = "Password updated successfully!";
+
+
+    // Clear inputs
+    document.getElementById("passwordForm").reset();
+
+});
+</script>
+<script src="common.js"></script>
+        
+</body>
+</html>

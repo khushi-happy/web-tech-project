@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="signuppage.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h1>Create your account</h1>
+        <p class="subtitle">Sign up to access the practice dashboard.</p>
+
+        <form id="signup">
+
+            <div class="row">
+                <div class="input-group">
+                    <label>First name:</label>
+                    <input id="firstname" type="text" placeholder="Enter First Name">
+                    <small id="firstnameerror" class="error"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Last Name:</label>
+                    <input id="lastname" type="text" placeholder="Enter Last Name">
+                    <small id="lastnameerror" class="error"></small>
+                </div>
+            </div>
+
+            <div class="input-group full">
+                <label>Email Address:</label>
+                <input id="email" type="email" placeholder="Enter your email address">
+                <small id="emailerror" class="error"></small>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Password:</label>
+                    <input id="password" type="password" placeholder="Enter Password">
+                    <small>Password should be atleast 8 characters.</small>
+                    <small id="passworderror" class="error"></small>
+                </div>
+
+                <div class="input-group">
+                    <label>Confirm Password:</label>
+                    <input id="confirmpassword" type="password" placeholder="Confirm Password">
+                    <small id="confirmpassworderror" class="error"></small>
+                </div>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" checked>
+                <span>I agree to the Terms</span>
+            </div>
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="login">
+            Already have account?
+            <a href="loginpage.html" id="login">Sign in</a>
+        </p>
+        <p id="successMessage"></p>
+
+
+
+    </div>
+</div>
+<script>
+    const form = document.getElementById("signup");
+
+form.addEventListener("submit", function(e) {
+
+    // Stop page refresh
+    e.preventDefault();
+
+
+    // Clear old error messages
+    document.getElementById("firstnameerror").textContent = "";
+    document.getElementById("lastnameerror").textContent = "";
+    document.getElementById("emailerror").textContent = "";
+    document.getElementById("passworderror").textContent = "";
+    document.getElementById("confirmpassworderror").textContent = "";
+    document.getElementById("successMessage").textContent = "";
+
+
+    // Get input values
+    const firstname = document.getElementById("firstname").value.trim();
+    const lastname = document.getElementById("lastname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmpassword = document.getElementById("confirmpassword").value;
+
+
+    // Assume form is correct
+    let isvalid = true;
+
+
+    // Check first name
+    if(firstname === "") {
+        document.getElementById("firstnameerror").textContent =
+        "First name is required.";
+        isvalid = false;
+    }
+
+
+    // Check last name
+    if(lastname === "") {
+        document.getElementById("lastnameerror").textContent =
+        "Last name is required.";
+        isvalid = false;
+    }
+
+
+    // Check email
+    if(email === "") {
+        document.getElementById("emailerror").textContent =
+        "Email is required.";
+        isvalid = false;
+    }
+
+
+    // Check password length
+    if(password.length < 8) {
+        document.getElementById("passworderror").textContent =
+        "Password must be at least 8 characters.";
+        isvalid = false;
+    }
+
+
+    // Check password match
+    if(password !== confirmpassword) {
+        document.getElementById("confirmpassworderror").textContent =
+        "Password does not match.";
+        isvalid = false;
+    }
+
+
+    // If any error exists, stop here
+    if(!isvalid) {
+        return;
+    }
+
+
+    // Get old users from localStorage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+    // Check if email already exists
+    const userExists = users.some(function(user) {
+        return user.email === email;
+    });
+
+
+    if(userExists) {
+        document.getElementById("emailerror").textContent =
+        "Email already exists.";
+        return;
+    }
+
+
+    // Create new user
+    const newUser = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password
+    };
+
+
+    // Add user to array
+    users.push(newUser);
+
+    // Save all users
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // Save current logged-in user
+    localStorage.setItem("currentUser", JSON.stringify(newUser));
+
+    // Redirect to dashboard
+    window.location.href = "overviewpage.html";
+
+
+    // Clear form
+    form.reset();
+
+});
+document.getElementById("login").addEventListener("click",function(e){
+    e.preventDefault();
+    window.location.href="loginpage.html";
+})
+
+</script>
+</body>
+</html>

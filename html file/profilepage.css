@@ -1,0 +1,132 @@
+
+
+/* Card */
+
+.card{
+    background:#fff;
+    margin:30px 30px 30px;
+    padding:30px;
+    border-radius:20px;
+    border:2px solid #7be3eb;
+     box-shadow:0 -8px 20px rgba(87,196,194,0.6);
+    
+    border:2px solid lightgray;
+    border-top:5px solid #57C4C2;
+    border-radius:20px;
+}
+
+.card h2{
+    margin-bottom:20px;
+}
+
+.card h4{
+    margin:20px 0;
+}
+
+/* Form */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.full{
+    margin-top:20px;
+}
+
+label{
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#f3f5f7;
+    border-radius:10px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border:1px solid #63d9e7;
+    background:#fff;
+}
+
+textarea{
+    resize:none;
+}
+
+.buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:30px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.cancel{
+    background:#fff;
+    border:1px solid #63d9e7;
+}
+
+.save{
+    background:#56d6da;
+    color:#fff;
+}
+
+.save:hover{
+    background:#40c7cb;
+}
+
+.cancel:hover{
+    background:#eefeff;
+}
+
+/* Responsive */
+
+@media (max-width:992px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+    
+}
+
+.topbar{
+    position:relative;
+    left:0;
+}
+
+.card{
+    margin:20px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.buttons{
+    justify-content:center;
+}
+
+}

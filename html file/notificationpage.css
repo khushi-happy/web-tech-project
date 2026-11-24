@@ -1,0 +1,170 @@
+
+
+/* Top Bar */
+
+.topbar{
+    height:62px;
+    background:#18397f;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    padding:0 22px;
+}
+
+.topbar h3{
+    font-size:15px;
+    font-weight:600;
+}
+
+/* Content */
+
+.content{
+    padding:26px;
+    
+}
+
+.notification-box{
+    background:#fff;
+    border:2px solid #8be7ea;
+    border-radius:22px;
+    padding:28px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    min-height:640px;
+    box-shadow:0 -8px 20px rgba(87,196,194,0.6);
+    
+    border:2px solid lightgray;
+    border-top:5px solid #57C4C2;
+    border-radius:20px;
+}
+
+.notification-box h2{
+    font-size:30px;
+    margin-bottom:28px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    color:#333;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.section-title i{
+    color:#52d8de;
+    margin-right:10px;
+}
+
+.description{
+    color:#444;
+    font-size:14px;
+    margin-bottom:28px;
+}
+
+/* Cards */
+
+.cards{
+    display:flex;
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.card{
+    flex:1;
+    border:1.5px solid #6de3e7;
+    border-radius:14px;
+    padding:20px;
+}
+
+.card .icon{
+    color:#46d2d9;
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.card h4{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.card small{
+    display:block;
+    color:#555;
+    margin-bottom:15px;
+}
+
+.card label{
+    font-size:14px;
+    color:#333;
+}
+
+.card input{
+    accent-color:#4bd5db;
+}
+
+/* Recent */
+
+.recent{
+    margin-bottom:18px;
+}
+
+.activity-card{
+    border:1.5px solid #6de3e7;
+    border-radius:14px;
+    padding:22px;
+    display:flex;
+    align-items:flex-start;
+}
+
+.activity-card i{
+    color:#4dd8de;
+    font-size:22px;
+    margin-right:15px;
+    margin-top:2px;
+}
+
+.activity-card h4{
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.activity-card p{
+    color:#555;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.activity-card small{
+    color:#666;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .cards{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:220px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+    }
+
+    .main{
+        width:100%;
+    }
+
+}

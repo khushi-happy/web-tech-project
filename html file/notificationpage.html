@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTech Practice Dashboard</title>
+    <link rel="stylesheet" href="notificationpage.css">
+    <link rel="stylesheet" href="fixed.css">
+</head>
+<body>
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="profile">
+            <div class="avatar" id="avatar">DU</div>
+
+            <div class="profile-info">
+                <h4 id="profileName">Demo User</h4>
+                <p id="profileEmail">demo@webtech.practice</p>
+            </div>
+        </div>
+
+        <div class="menu-title">DASHBOARD</div>
+
+        <ul class="menu">
+            <li><a href="overviewpage.html" id="overview">Overview</a></li>
+            <li><a href="profilepage.html" id="profile">Profile Settings</a></li>
+            <li><a href="securitypage.html" id="security">Security</a></li>
+            <li class="active"><a href="notificationpage.html" id="notification">Notification</a></li>
+        </ul>
+
+        <div class="menu-title">QUICK ACTION</div>
+
+        <ul class="menu">
+            <li><a href="helppage.html" id="help">Help & Support</a></li>
+        </ul>
+
+        <div class="bottom-menu">
+            <div class="menu-title">ACCOUNT</div>
+
+            <ul class="menu">
+                <li><a href="#" id="logout">Sign Out</a></li>
+            </ul>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <h3>WebTech Practice Dashboard</h3>
+        </header>
+
+        <!-- Notification Card -->
+        <section class="content">
+
+            <div class="notification-box">
+
+                <h2>Notifications</h2>
+
+                <div class="section-title">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notification Preferences</span>
+                </div>
+
+                <p class="description">
+                    Manage how and when you receive notifications about your account activity.
+                </p>
+
+                <div class="cards">
+
+                    <!-- Email -->
+                    <div class="card">
+
+                        <i class="fa-regular fa-envelope icon"></i>
+
+                        <h4>Email Notifications</h4>
+
+                        <small>
+                            Receive important updates via email
+                        </small>
+
+                        <label>
+                            <input type="checkbox" checked>
+                            Enable email notifications
+                        </label>
+
+                    </div>
+
+                    <!-- Security -->
+                    <div class="card">
+
+                        <i class="fa-solid fa-lock icon"></i>
+
+                        <h4>Security Alerts</h4>
+
+                        <small>
+                            Get notified about security changes
+                        </small>
+
+                        <label>
+                            <input type="checkbox" checked>
+                            Enable security alerts
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- Recent Activity -->
+
+                <div class="section-title recent">
+                    <i class="fa-regular fa-clipboard"></i>
+                    <span>Recent Activity</span>
+                </div>
+
+                <div class="activity-card">
+
+                    <i class="fa-regular fa-square-check"></i>
+
+                    <div>
+
+                        <h4>Profile Updated</h4>
+
+                        <p>
+                            Your profile information was successfully updated
+                        </p>
+
+                        <small>Today</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="common.js"></script>
+
+</body>
+</html>

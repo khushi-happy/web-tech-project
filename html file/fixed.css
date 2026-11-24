@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef2f3;
+    overflow:hidden;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100vh;
+    background:#fff;
+    border-right:1px solid #d8e6e8;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:18px;
+    border-bottom:1px solid #d8e6e8;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:#17357f;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:600;
+}
+
+.profile-info h4{
+    font-size:15px;
+}
+
+.profile-info p{
+    font-size:12px;
+    color:#666;
+}
+
+.menu-title{
+    margin:20px 20px 10px;
+    font-size:12px;
+    font-weight:600;
+    color:#222;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin:8px 20px;
+}
+
+.menu li a{
+    display:block;
+    padding:12px 18px;
+    text-decoration:none;
+    color:#222;
+    border-radius:12px;
+    transition:.3s;
+    font-size:14px;
+}
+
+.menu li a:hover{
+    background:#f3f8f9;
+}
+
+.menu li.active a{
+    border:2px solid #61d8e4;
+    background:#f9ffff;
+    
+    
+    border:2px solid #57C4C2;
+    border-left:5px solid #57C4C2;
+    border-radius:15px;
+
+}
+
+.bottom-menu{
+    margin-top:auto;
+    margin-bottom:25px;
+}
+
+/* ================= Main ================= */
+
+.main{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    height:100vh;
+    overflow-y:auto;
+}
+
+/* ================= Topbar ================= */
+
+.topbar{
+    height:70px;
+    background:#17357f;
+    display:flex;
+    align-items:center;
+    padding:0 35px;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.topbar h3{
+    color:#fff;
+    font-size:18px;
+    font-weight:500;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width:992px){
+
+    body{
+        overflow:auto;
+    }
+
+    .container{
+        display:block;
+        height:auto;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+        height:auto;
+        overflow:visible;
+    }
+
+    .topbar{
+        position:relative;
+    }
+
+}

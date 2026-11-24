@@ -1,0 +1,125 @@
+
+
+/* ================= TOPBAR ================= */
+
+.topbar{
+    height:60px;
+    background:#163d82;
+    display:flex;
+    align-items:center;
+    padding-left:25px;
+    color:white;
+}
+
+.topbar h2{
+    font-size:16px;
+    font-weight:500;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:30px;
+}
+
+.help-box{
+    background:white;
+    border:2px solid #7fe7eb;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 -8px 20px rgba(87,196,194,0.6);
+    
+    border:2px solid lightgray;
+    border-top:5px solid #57C4C2;
+    border-radius:20px;
+}
+
+.help-box h1{
+    font-size:34px;
+    margin-bottom:35px;
+}
+
+/* ================= HEADINGS ================= */
+
+.heading{
+    display:flex;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.icon{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#e6fbfc;
+    color:#39d5dc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.heading h3{
+    font-size:18px;
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+    border:1.5px solid #6de0e4;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:18px;
+}
+
+.faq h4{
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.faq p{
+    font-size:14px;
+    line-height:1.7;
+    color:#555;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    margin-top:35px;
+}
+
+.contact-text{
+    font-size:14px;
+    color:#555;
+    line-height:1.8;
+    width:90%;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+}
+
+.content{
+    padding:20px;
+}
+
+.help-box{
+    padding:20px;
+}
+
+.contact-text{
+    width:100%;
+}
+
+}

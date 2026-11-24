@@ -1,0 +1,306 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef2f3;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+    width:260px;
+    background:#fff;
+    border-right:1px solid #d8e6e8;
+    display:flex;
+    flex-direction:column;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:18px;
+    border-bottom:1px solid #d8e6e8;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:#17357f;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:600;
+}
+
+.profile-info h4{
+    font-size:15px;
+}
+
+.profile-info p{
+    font-size:12px;
+    color:#666;
+}
+
+.menu-title{
+    margin:20px 20px 10px;
+    font-size:12px;
+    font-weight:600;
+    color:#222;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin:8px 20px;
+}
+
+.menu li a{
+    display:block;
+    padding:12px 18px;
+    text-decoration:none;
+    color:#222;
+    border-radius:12px;
+    transition:.3s;
+    font-size:14px;
+}
+
+.menu li a:hover{
+    background:#f3f8f9;
+}
+
+.menu li.active a{
+    border:2px solid #61d8e4;
+    background:#f9ffff;
+}
+
+.bottom-menu{
+    margin-top:auto;
+    margin-bottom:25px;
+}
+
+/* ================= Main ================= */
+
+.main{
+    flex:1;
+}
+
+/* ================= Topbar ================= */
+
+.topbar{
+    height:70px;
+    background:#17357f;
+    display:flex;
+    align-items:center;
+    padding:0 35px;
+}
+
+.topbar h3{
+    color:#fff;
+    font-size:18px;
+    font-weight:500;
+}
+
+/* ================= Card ================= */
+
+.card{
+    width:90%;
+    margin:35px auto;
+    background:#fff;
+    border:2px solid #75dfe8;
+    border-radius:22px;
+    padding:35px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+     box-shadow:0 -8px 20px rgba(87,196,194,0.6);
+    
+    border:2px solid lightgray;
+    border-top:5px solid #57C4C2;
+    border-radius:20px;
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.card h4{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card h5{
+    font-size:14px;
+    color:#666;
+    font-weight:400;
+    margin-bottom:30px;
+}
+
+/* ================= Form ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.full{
+    margin-top:20px;
+}
+
+label{
+    font-size:13px;
+    margin-bottom:8px;
+    color:#444;
+    font-weight:500;
+}
+
+input{
+    width:100%;
+    padding:14px 15px;
+    border:none;
+    border-radius:12px;
+    background:#f1f4f5;
+    outline:none;
+    font-size:14px;
+}
+
+input:focus{
+    border:2px solid #62d8e4;
+    background:#fff;
+}
+
+/* ================= Buttons ================= */
+
+.buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:25px;
+}
+
+.cancel{
+    padding:12px 28px;
+    background:#fff;
+    border:2px solid #62d8e4;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.save{
+    padding:12px 30px;
+    border:none;
+    background:#58d6d7;
+    color:#fff;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.save:hover{
+    background:#45c8ca;
+}
+
+.cancel:hover{
+    background:#f6ffff;
+}
+
+hr{
+    margin:40px 0;
+    border:none;
+    border-top:1px solid #d8e6e8;
+}
+
+/* ================= Security Info ================= */
+
+.section-title{
+    margin-bottom:25px;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.info-card{
+    border:2px solid #74dfe8;
+    border-radius:15px;
+    padding:25px;
+    background:#fff;
+}
+
+.info-card h3{
+    
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.info-card h4{
+    font-size:17px;
+    margin-bottom:10px;
+    margin-top: 20px;
+}
+
+.info-card p{
+    color:#666;
+    font-size:14px;
+}
+.info-card span{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .card{
+        width:95%;
+        padding:25px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+        grid-template-columns:1fr;
+    }
+
+    .buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+}
+#updateMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 15px;
+}

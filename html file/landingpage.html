@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="landingpage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">WebTech Practice</a></div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#theme">Theme</a></li>
+                <li><a href="loginpage.html" id="loginlink">Login</a></li>
+                <li class="signup"><a href="signuppage.html" id="signuplink">SignUp</a></li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+    <section class="hero" >
+        <div class="left">
+            <h1>Launch Your Web Tech Practice in minutes </h1>
+            <p>A clean, modern starter template with login, Signup, Dashboard, Profile and Logout pages using only HTML/CSS/JS and browser local storage.Perfect for learning and practicing web development fundamentals.</p>
+            <button class="btn1" onclick="window.location.href='signuppage.html'"><b>SignUp</b></button>
+            <button class="btn2"  onclick="window.location.href='loginpage.html'">I already have an account</button>
+        </div>
+    <div class="flowbox" id="theme">
+
+    <button class="arrow prev">&#10094;</button>
+
+    <div class="slides">
+
+        <div class="slide active">
+            <h2>Complete Auth Flow</h2>
+            <p>Beautiful dark/light mode with smooth transitions, persisted across all pages and sessions.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Complete Auth Flow-2</h2>
+            <p>Responsive dashboard with profile, logout and localStorage support.</p>
+        </div>
+
+        <div class="slide">
+            <h2>Complete Auth Flow-3</h2>
+            <p>Dark/Light theme with animations and modern UI.</p>
+        </div>
+
+    </div>
+
+    <button class="arrow next">&#10095;</button>
+
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</div>
+    </section>
+    <div class="about" id="about">
+        <h1>About This Project</h1>
+        <p class="text2">The comprehensive template is designed for students and developers to practice modern web fundamentals-responsive layouts, accessible forms, client-side state management, and component architecture-without any frameworks or complex build processes.</p>
+        
+        <div class="box">Single-File pages you can open directly in any modern browser</div>
+         <div class="box">Single-File pages you can open directly in any modern browser</div>
+         <div class="box">Single-File pages you can open directly in any modern browser</div>
+         <div class="box">Single-File pages you can open directly in any modern browser</div>
+         <div class="box">Single-File pages you can open directly in any modern browser</div>
+         <div class="box">Single-File pages you can open directly in any modern browser</div>
+        
+        </div>
+
+        <h1 style="text-align: center;margin-top: 100px;">What's Included</h1>
+    <div class="thirddiv">
+        <div class="boxes" id="services"><p><b>Authentication Templates</b></p>
+        <p>Beautiful login and signup forms with real-time validation,error handling, and seamless localStorage integration.</p>
+        </div>
+        <div class="boxes"><p><b>Authentication Templates</b></p>
+        <p>Beautiful login and signup forms with real-time validation,error handling, and seamless localStorage integration.</p>
+        </div>
+        <div class="boxes"><p><b>Authentication Templates</b></p>
+        <p>Beautiful login and signup forms with real-time validation,error handling, and seamless localStorage integration.</p>
+        </div>
+        <div class="boxes"><p><b>Authentication Templates</b></p>
+        <p>Beautiful login and signup forms with real-time validation,error handling, and seamless localStorage integration.</p>
+        </div>
+        <div class="boxes"><p><b>Authentication Templates</b></p>
+        <p>Beautiful login and signup forms with real-time validation,error handling, and seamless localStorage integration.</p>
+        </div>
+        <div class="boxes"><p><b>Authentication Templates</b></p>
+        <p>Beautiful login and signup forms with real-time validation,error handling, and seamless localStorage integration.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="navdiv" style="margin-top: 100px;">
+            <div style="font-weight: bold; color: white;margin-right: 20px;"><p>@2025 WebTech Practice.Build for learning growth.</p></div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#theme">Theme</a></li>
+                <li><a href="loginpage.html" id="loginlink">Login</a></li>
+                <li class="signup"><a href="signuppage.html" id="signuplink">SignUp</a></li>
+
+            </ul>
+
+        </div>
+    </footer>
+    <script>
+    document.getElementById("loginlink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevents "#" from being followed
+    window.location.href = "loginpage.html";
+    });
+     document.getElementById("signuplink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevents "#" from being followed
+    window.location.href = "signuppage.html";
+    });
+</script>
+<script src="landingpage.js"></script>
+
+
+</body>
+</html>
